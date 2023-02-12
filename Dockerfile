@@ -6,6 +6,8 @@ WORKDIR /app
 # Copy scripts to container
 COPY ./scripts/* /app/scripts/
 
+RUN chmod a+x -R /app/scripts/*
+
 # Install packages and dependencies
 RUN /app/scripts/packages.sh \
     && /app/scripts/install-oh-my-posh.sh \
